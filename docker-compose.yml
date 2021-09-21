@@ -10,7 +10,7 @@ services:
       - "1194:1194/udp"
       - "1195:8080/tcp"
     environment:
-      HOST_ADDR: 127.0.0.1
+      HOST_ADDR: alexfire.shvarev.com
     volumes:
       - openvpn-data:/opt/Dockovpn_data
     restart: unless-stopped
