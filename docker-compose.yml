@@ -1,0 +1,20 @@
+version: '3.8'
+
+
+services:
+  OpenVPN:
+    image: alekslitvinenk/openvpn:latest
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194/udp"
+      - "1195:8080/tcp"
+    environment:
+      HOST_ADDR: 127.0.0.1
+    volumes:
+      - openvpn-data:/opt/Dockovpn_data
+    restart: unless-stopped
+
+
+volumes:
+  openvpn-data:
